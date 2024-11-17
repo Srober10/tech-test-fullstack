@@ -1,0 +1,108 @@
+.card {
+  display: flex;
+  text-align: start;
+  position: relative; /* required as the gift ribbon is relative to this layout */
+  background-color: white;
+  flex-direction: row;
+  border: solid rgba(179, 173, 173, 0.747) 2px;
+  border-radius: 8px;
+  height: 255px; // fix height
+  width: 1000px; /* this is therefore the breakpoint to swap into a new layout on smaller screens e.g tablets */
+  @media screen and (max-width: 1005px) {
+    width: 95vw;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+// don't show the large image in mobile view
+.cardSideImage {
+  @media screen and (max-width: 1005px) {
+    display: none;
+  }
+}
+
+// don't show the mobile image in desktop view
+.cardMobileImage {
+  display: none;
+  @media screen and (max-width: 1005px) {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: -275px; /* subtract the mobile banner from this*/
+    border-radius: 50%;
+    transform: rotate(7deg); // counteract parent rotation
+    left: 5em;
+  }
+}
+
+/* free gift for mobile view  */
+/* position on horizontal is controled by flexbox being set to center */
+.mobileCardGift {
+  display: none;
+  @media screen and (max-width: 1005px) {
+    z-index: 1; /* Ensure the ribbon is above the card */
+    top: 245px; // todo make sure height is fixed..
+    display: flex;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    margin: 0 auto;
+    border: 2px pink;
+    background: pink;
+    height: 30px;
+    width: 130px;
+    transform: rotate(-7deg);
+    p {
+      text-transform: uppercase;
+      padding: 0;
+      margin: auto;
+      width: 100%;
+    }
+  }
+}
+
+.cardCopy {
+  padding: 40px 20px 40px 20px; /* padding should be greater on top and bottom of the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (max-width: 1005px) {
+    width: 95vw;
+    text-align: center;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.freeGift {
+  position: absolute;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  top: -10px;
+  left: 880px; /* Make it overlap the card edge, calculation: width of card - width of self + buffer */
+  border: 2px pink;
+  background: pink;
+  height: 30px;
+  width: 130px;
+  transform: rotate(10deg);
+  z-index: 1; /* Ensure the ribbon is above the card */
+  align-content: center;
+  @media (max-width: 1005px) {
+    display: none;
+  }
+
+  p {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+  }
+}

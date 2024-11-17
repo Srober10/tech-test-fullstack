@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/src/assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset default browser styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  font-family: "Quicksand", sans-serif;
+}
+
+.appContainer {
+  background-color: ghostwhite;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.errorScreen {
+  background-color: ghostwhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+h3 {
+  font-weight: bold;
+  color: green;
+  margin-top: 0;
+}
+
+.button-primary {
+  font-family: inherit;
+  background-color: #28a745;
+  color: white;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: normal;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  width: 274px; /* button width fixed calc is therefore (card_width - image_width - left_padding - right_padding - gap) / 2 ==> (1000 - 400 -40 -12) / 2 */
+  height: 40px;
+
+  @media screen and (max-width: 650px) {
+    width: 140px;
+  }
+}
+
+.button-primary:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.button-primary:active {
+  background-color: #1e7e34; /* Even darker green when button is pressed */
+}
+
+.button-secondary {
+  font-family: inherit;
+  background-color: white;
+  color: #28a745;
+  padding: 4px 12px; /* Padding for the button, accounting for border */
+  border: 2px solid #218838;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: normal;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  width: 274px; /* button width fixed calc is therefore (card_width - image_width - left_padding - right_padding - gap) / 2 ==> (1000 - 400 -40 -12) / 2 */
+  height: 40px;
+  @media screen and (max-width: 650px) {
+    width: 140px;
+  }
+}
+
+.button-secondary:hover {
+  background-color: #28a745; /* primary green on hover */
+  color: white;
+}
+
+.button-secondary:active {
+  background-color: #1e7e34; /* Even darker green when button is pressed */
+  color: white;
+}
