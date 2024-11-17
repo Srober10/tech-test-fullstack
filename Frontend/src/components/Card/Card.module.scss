@@ -6,7 +6,7 @@
   flex-direction: row;
   border: solid rgba(179, 173, 173, 0.747) 2px;
   border-radius: 8px;
-  height: 255px; // fix height
+  height: auto; // fixed height does not work with absolute and variable length copy
   width: 1000px; /* this is therefore the breakpoint to swap into a new layout on smaller screens e.g tablets */
   @media screen and (max-width: 1005px) {
     width: 95vw;
@@ -30,10 +30,8 @@
     display: flex;
     position: absolute;
     z-index: 1;
-    top: -275px; /* subtract the mobile banner from this*/
+    top: -10%;
     border-radius: 50%;
-    transform: rotate(7deg); // counteract parent rotation
-    left: 5em;
   }
 }
 
@@ -42,8 +40,8 @@
 .mobileCardGift {
   display: none;
   @media screen and (max-width: 1005px) {
-    z-index: 1; /* Ensure the ribbon is above the card */
-    top: 245px; // todo make sure height is fixed..
+    z-index: 1; /* Ensures the ribbon is above the card */
+    top: 95%;
     display: flex;
     position: absolute;
     text-align: center;

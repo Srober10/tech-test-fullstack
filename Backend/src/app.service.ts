@@ -59,8 +59,7 @@ export class AppService {
     console.log('data is at index 0?', customerArray[0]);
 
     const customer = customerArray?.find((d: Customer) => d.id === id);
-    if (customer === undefined) {
-      // handle error futther in?
+    if (!customer) {
       return undefined;
     }
     return transformUserData(customer);

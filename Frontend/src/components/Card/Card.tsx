@@ -12,13 +12,17 @@ interface CardProps {
   onEditDeliveryClick?: () => {}; // not in scope of tech test
 }
 
+interface FreeGiftMobileViewProps {
+  freeGift: boolean;
+}
+
 const FreeGiftDesktopView = () => {
   return <div className={styles.freeGift}>{FREE_GIFT_TEXT}</div>;
 };
 
-const FreeGiftMobileView = () => {
+const FreeGiftMobileView = ({ freeGift }: FreeGiftMobileViewProps) => {
   return (
-    <div className={styles.mobileCardGift}>
+    <>
       <img
         className={styles.cardMobileImage}
         width={60}
@@ -26,8 +30,10 @@ const FreeGiftMobileView = () => {
         src={catStockImage}
         alt="your cat(s)!"
       />
-      {FREE_GIFT_TEXT}
-    </div>
+      {freeGift && (
+        <div className={styles.mobileCardGift}>{FREE_GIFT_TEXT}</div>
+      )}
+    </>
   );
 };
 
@@ -47,7 +53,7 @@ const Card = ({
         alt="your cat(s)!"
       />
       {freeGift && <FreeGiftDesktopView />}
-      {freeGift && <FreeGiftMobileView />}
+      <FreeGiftMobileView freeGift={freeGift} />
       <div className={styles.cardCopy}>
         <div>
           <h3>{titleText}</h3>

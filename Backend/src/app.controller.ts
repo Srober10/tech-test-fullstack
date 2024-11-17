@@ -1,8 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { AppService, NextDeliveryInfo } from './app.service';
 
-// empty parameter in controller here means this is the base url
-// e.g '/'
 @Controller('comms/your-next-delivery')
 export class AppController {
   constructor(private readonly appService: AppService) {} // injects AppService
